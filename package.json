@@ -1,0 +1,33 @@
+{
+  "name": "pipe-segment-scope-codec",
+  "version": "0.1.1",
+  "description": "Scope a pipe-segment-codec.",
+  "main": "index.js",
+  "dependencies": {
+    "duplexer2.jbenet": "^0.0.3",
+    "pipe-segment": "^0.1.2",
+    "pipe-segment-codec": "^0.1.3",
+    "scoped-transform-stream": "^0.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbenet/node-pipe-segment-scope-codec.git"
+  },
+  "author": "Juan Benet <juan@benet.ai> (http://juan.benet.ai/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbenet/node-pipe-segment-scope-codec/issues"
+  },
+  "homepage": "https://github.com/jbenet/node-pipe-segment-scope-codec",
+  "keywords": [
+    "pipe",
+    "segment",
+    "scope",
+    "json-pointer",
+    "codec"
+  ]
+}
