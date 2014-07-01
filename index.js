@@ -1,17 +1,19 @@
 var scope = require('scoped-transform-stream')
 var segment = require('pipe-segment')
-var duplexer2 = require('duplexer2.jbenet')
 
 module.exports = ScopeCodec
 
 function ScopeCodec(codec, path) {
+  if (!(codec.encode && codec.decode))
+    throw new Error('scope requires the transform codec interface.')
+
   var enc = scope(codec.encode, path)
   var dec = scope(codec.decode, path)
 
   var o = {objectMode: true, highWaterMark: 16}
   return segment({
-    encoded: duplexer2(o, dec, enc),
-    decoded: duplexer2(o, enc, dec),
+    encode: enc,
+    decode: dec,
     encodeErrors: codec.encodeErrors,
     decodeErrors: codec.decodeErrors,
   })
